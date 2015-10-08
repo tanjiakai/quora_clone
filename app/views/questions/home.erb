@@ -1,0 +1,7 @@
+<h1>Homepage</h1>
+<form action="/question/new" method="post">
+  <input type="submit" value="New Question">
+</form>
+<% @questions.each do |x| %>
+<p><%= x.description%></p>
+<% end %>
