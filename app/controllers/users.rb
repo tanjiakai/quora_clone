@@ -29,7 +29,7 @@ post '/users' do
   @user = User.create(email: params[:email], password: params[:password])
   p "[LOG] @user = #{@user.errors.messages}"
   if @user.errors.any?
-    erb :errors
+    erb :"users/errors"
   else
     redirect to "users/profiles"
   end
