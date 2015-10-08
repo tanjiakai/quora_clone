@@ -1,29 +1,30 @@
-get '/question' do
+get '/questions' do
+  @user_id = session[:user].id
   @questions = Question.all
   erb :"questions/home"
 end
 
-get '/question/new' do
+get '/questions/new' do
   erb :"questions/new"
 end
 
-post '/question' do
+post '/questions' do
   Question.create(description: params[:question], user: session[:user])
-  redirect to '/question'
+  redirect to '/questions'
 end
 
-get '/question/:id' do
-
-end
-
-get '/question/:id/edit' do
+get '/questions/:id' do
 
 end
 
-put '/question/:id' do
+get '/questions/:id/edit' do
 
 end
 
-delete '/question/:id' do
+put '/questions/:id' do
+
+end
+
+delete '/questions/:id' do
 
 end

@@ -1,5 +1,6 @@
 <h1>Homepage</h1>
-<a href="/question/new">New Question</a>
+<a href="/questions/new">New Question</a>
+<a href="/users/<%= @user_id %>/questions">My Questions</a>
 <% @questions.each do |x| %>
     <p><%= x.description%></p>
     <p>Created by <%= x.user.email %></p>

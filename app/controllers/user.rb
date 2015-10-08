@@ -1,13 +1,13 @@
-get '/session/new' do
+get '/sessions/new' do
   erb :"users/sessions"
 end
 
-post '/session' do
+post '/sessions' do
   if User.exist?(params[:email])
     if User.authenticate?(params[:email], params[:password])
       session[:user] = User.find_by(email: params[:email])
       # redirect to "/users/#{session[:user_id]}"
-      redirect to '/question'
+      redirect to '/questions'
     else
       @error = 'Invalid password'
     end
@@ -17,7 +17,7 @@ post '/session' do
   erb :errors
 end
 
-delete '/session' do
+delete '/sessions' do
   session[:user_id] = nil
   redirect to '/'
 end
@@ -44,4 +44,9 @@ end
 
 post '/users/:id' do
 
+end
+
+get '/users/:id/questions' do
+  @questions = Question.where(user: session[:user])
+  erb :'users/questions'
 end
