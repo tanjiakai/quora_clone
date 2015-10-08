@@ -5,7 +5,7 @@ end
 post '/session' do
   if User.exist?(params[:email])
     if User.authenticate?(params[:email], params[:password])
-      session[:user_id] = User.find_by(email: params[:email]).id
+      session[:user] = User.find_by(email: params[:email])
       # redirect to "/users/#{session[:user_id]}"
       redirect to '/question'
     else

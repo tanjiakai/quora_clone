@@ -1,7 +1,6 @@
 <h1>Homepage</h1>
-<form action="/question/new" method="post">
-  <input type="submit" value="New Question">
-</form>
+<a href="/question/new">New Question</a>
 <% @questions.each do |x| %>
-<p><%= x.description%></p>
+    <p><%= x.description%></p>
+    <p>Created by <%= x.user.email %></p>
 <% end %>

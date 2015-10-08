@@ -4,11 +4,12 @@ get '/question' do
 end
 
 get '/question/new' do
-
+  erb :"questions/new"
 end
 
 post '/question' do
-
+  Question.create(description: params[:question], user: session[:user])
+  redirect to '/question'
 end
 
 get '/question/:id' do
