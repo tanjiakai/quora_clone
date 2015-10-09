@@ -10,4 +10,11 @@ function checkPasswordMatch() {
 
 $(document).ready(function () {
     $("#ConfirmPassword").keyup(checkPasswordMatch);
+    $(".flashMessage").slideUp(1500);
+    $("#register-email").blur(function() {
+        data = $(this).serialize();
+        $.get("/ajaxtest", data, function(data, status){
+            alert("Data: " + data + "\nStatus: " + status);
+        });
+    });
 });

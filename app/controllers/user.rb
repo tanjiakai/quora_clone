@@ -1,3 +1,11 @@
+get '/ajaxtest' do
+  if params[:email] == User.find_by(email: params[:email]).email
+    return 'The email address has already been taken'
+  else
+    return 'Email address is valid'
+  end
+
+end
 get '/sessions/new' do
   erb :"users/sessions"
 end
@@ -19,6 +27,8 @@ end
 
 delete '/sessions' do
   session[:user] = nil
+  session[:flash] = nil
+  session[:question] = nil
   redirect to '/'
 end
 
