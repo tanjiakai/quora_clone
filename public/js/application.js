@@ -1,7 +1,13 @@
-$(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+function checkPasswordMatch() {
+    var password = $("#NewPassword").val();
+    var confirmPassword = $("#ConfirmPassword").val();
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+    if (password != confirmPassword)
+        $("#bt-register").prop('disabled', true).addClass("btn-warning")
+    else
+        $("#bt-register").prop('disabled', false).removeClass("btn-warning");
+}
+
+$(document).ready(function () {
+    $("#ConfirmPassword").keyup(checkPasswordMatch);
 });

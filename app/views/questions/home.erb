@@ -1,7 +1,13 @@
 <h1>Homepage</h1>
-<a href="/questions/new">New Question</a>
-<a href="/users/<%= @user_id %>/questions">My Questions</a>
+<form action="/sessions" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Logout"/>
+</form>
+<a href="/questions/new">New Question</a><br>
+<a href="/users/<%= @user_id %>/questions">My Questions</a><br>
+<a href="/users/<%= @user_id %>/answers">My Answers</a>
 <% @questions.each do |x| %>
     <p><%= x.description%></p>
     <p>Created by <%= x.user.email %></p>
+    <p><a href="/questions/<%= x.id %>">Answer this</a></p>
 <% end %>

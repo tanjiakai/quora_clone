@@ -14,7 +14,11 @@ post '/questions' do
 end
 
 get '/questions/:id' do
+  session[:question] = Question.find(params[:id])
+  @question = session[:question]
+  @answers = Answer.where(question: session[:question])
 
+  erb :'questions/questions'
 end
 
 get '/questions/:id/edit' do

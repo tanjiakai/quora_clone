@@ -7,3 +7,66 @@
 th {
   text-align: left;
 }
+#login-dp{
+  min-width: 250px;
+  padding: 14px 14px 0;
+  overflow:hidden;
+  background-color:rgba(255,255,255,.8);
+}
+#login-dp .help-block{
+  font-size:12px
+}
+#login-dp .bottom{
+  background-color:rgba(255,255,255,.8);
+  border-top:1px solid #ddd;
+  clear:both;
+  padding:14px;
+}
+#login-dp .social-buttons{
+  margin:12px 0
+}
+#login-dp .social-buttons a{
+  width: 49%;
+}
+#login-dp .form-group {
+  margin-bottom: 10px;
+}
+.btn-tw{
+  color: #fff;
+  background-color:#55acee;
+}
+.btn-tw:hover{
+  color: #fff;
+  background-color:#59b5fa;
+}
+ul.list-group{
+    width: 40em;
+    margin: auto;
+    text-justify: auto;
+}
+
+.question-item{
+    font-size: 19px;
+    color: #333;
+    letter-spacing: -0.5px;
+    line-height: 1.25;
+    font-weight: bold;
+    display: block;
+}
+.answer-item{
+    font-family: Georgia,Times,"Times New Roman",serif;
+    font-size: 15px;
+    line-height: 1.4;
+}
+.user-item{
+    font-size: 15px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+/*Body for registration page*/
+body#register{
+    padding-top: 10em;
+}
+/*Div for registration form*/
+.register{
+    border-style: hidden;
+}

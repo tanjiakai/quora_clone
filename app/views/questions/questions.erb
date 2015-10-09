@@ -1,0 +1,13 @@
+<h1>Question</h1>
+
+<a href="/questions">Home</a>
+<p><%= @question.description %></p>
+<form action="/answers" method="post">
+  <input type="text" name="answer"/>
+  <input type="submit" value="Submit"/>
+</form>
+
+<h2>Answers:</h2>
+<% @answers.each do |x| %>
+    <p> <%= x.description %></p>
+<% end %>

@@ -1,9 +1,12 @@
-<h1>My Questions</h1>
+<h1>My Answers</h1>
 <form action="/sessions" method="post">
   <input type="hidden" name="_method" value="delete">
   <input type="submit" value="Logout"/>
 </form>
 <a href="/questions">Home</a>
-<% @questions.each do |x| %>
-  <p><%= x.description %></p>
+<% @answers.each do |x| %>
+    <p><%= x.question.description %></p>
+<% end %>
+<% @answers.each do |x| %>
+    <p><%= x.description %></p>
 <% end %>
